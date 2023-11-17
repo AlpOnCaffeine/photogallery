@@ -26,7 +26,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-@media screen and (min-width:485px){
+@media screen and (max-width:485px){
 
 body{
     margin: auto;
@@ -81,6 +81,11 @@ p{
     padding: 5px;
     font-size: 1.25em;
 }
+.gallery{
+    display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        column-gap: 10px;
+}
 figcaption, label, input, small{
     font-size: 1em;
 }
@@ -110,10 +115,10 @@ figure:nth-child(even) figcaption{
     text-transform: uppercase;
 }
 img{
-    /*display: block;*/
+    display: block;
     max-width: 100%;
 }
-.contact{
+.contact h2, .contact p{
     color: white;
     text-align: center;
     margin-bottom: 20px;
@@ -202,10 +207,15 @@ footer{
         padding: 5px;
         font-size: 1.25em;
     }
-    .gallery figure{
+    .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 10px;
+    }
+    /*This styled the h2 and p tag in the gallery class to make it centered and not display in two columns*/
+    .gallery h2, .gallery p{
+        text-align: center;
+        grid-column: 1/ -1;
     }
     figcaption, label, input, small{
         font-size: 1em;
@@ -275,6 +285,135 @@ footer{
         color:white;
         background-color: #007d7b;
         padding: 15px 100px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; 
+        align-self: center;  
+        font-weight: bold; 
+        margin: 5px;
+    }
+    footer{
+        text-align: center;
+        padding: 30px;
+        margin: auto;
+        color: white;
+    }
+}
+@media screen and (max-width:1300){
+    body{
+        margin: auto;
+        padding: 10px;
+        background-color: black;
+    }
+    header{
+        background-color: black;
+    }
+    h1{
+        color: #007d7b;
+        background-color: white;
+        font-size: 3em;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    nav ul {
+        background-color: black;
+        display: flex;
+        justify-content: right;
+        padding: 10px 0;
+    }
+    nav a{
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        margin: 0 10px;
+        font-size: 1.5em;
+    }
+    [href="#top"] {
+        position:fixed;
+        bottom:0px;
+        right:0px;
+        border-radius:10px 0 0px 0px;
+      }
+    
+    main{
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        min-width: 350px;
+    }
+    h2{
+        text-align:center;
+        padding: 10px;
+        font-size: 2em;
+    }
+    p{
+        padding: 5px;
+        font-size: 1.25em;
+    }
+    .gallery{
+        display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 10px;
+    }
+    .gallery h2, .gallery p{
+        text-align: center;
+        grid-column: 1/ -1;
+    }
+    figcaption, label, input, small{
+        font-size: 1em;
+    }
+    
+    figure{
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+    }
+    figure:nth-child(odd) figcaption{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        text-transform: uppercase;
+    
+    }
+    figure:nth-child(even) figcaption{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+    img{
+        /*display: block;*/
+        max-width: 100%;
+    }
+    .contact h2, .contact p{
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    div{
+        width: 100%;
+    }
+    input[type="text"], input[type="email"], textarea{
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #007d7b;
+        color: #007d7b;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    #submit{
+        color:white;
+        background-color: #007d7b;
+        padding: 10px 50px;
         border: none;
         border-radius: 5px;
         cursor: pointer; 
