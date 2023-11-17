@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 body{
     margin: auto;
     padding: 10px;
+    background-color: black;
 }
 header{
     background-color: black;
@@ -42,10 +43,10 @@ h1{
     text-transform: capitalize;
     text-align: center;
 }
-nav{
+nav ul {
     background-color: black;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 10px 0;
 }
@@ -60,5 +61,60 @@ nav a{
 
 main{
     background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+h2{
+    text-align:center;
+    padding: 10px;
+}
+p{
+    padding: 5px;
+}
+.gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+.top {
+    align-self: flex-start;
+}
+.bottom {
+    align-self: flex-end;
+}
+.contact{
+    color: white;
+    text-align: center;
+    width: 350px;
+    margin: auto;
+}
+#form{
+    margin: auto;
+    width: 350px;
+    color: white;
+}
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="email"]{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #007d7b;
+    color: #007d7b;
+    
+}
+#submit{
+    color:white;
+    background-color: #007d7b;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    align-items: center;   
 }
 }
