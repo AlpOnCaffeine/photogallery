@@ -26,7 +26,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-@media screen and (max-width:485px){
+@media screen and (min-width:485px){
 
 body{
     margin: auto;
@@ -39,7 +39,7 @@ header{
 h1{
     color: #007d7b;
     background-color: white;
-    font-size: 1.25em;
+    font-size: 3em;
     text-transform: capitalize;
     text-align: center;
 }
@@ -57,64 +57,250 @@ nav a{
     color: white;
     padding: 10px;
     margin: 0 10px;
+    font-size: 1.5em;
 }
+[href="#top"] {
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    border-radius:10px 0 0px 0px;
+  }
 
 main{
     background-color: white;
     padding: 10px;
     margin: 10px;
+    min-width: 350px;
 }
 h2{
     text-align:center;
     padding: 10px;
+    font-size: 2em;
 }
 p{
     padding: 5px;
+    font-size: 1.25em;
 }
-.gallery{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
+figcaption, label, input, small{
+    font-size: 1em;
 }
 
-.top {
-    align-self: flex-start;
+figure{
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
 }
-.bottom {
-    align-self: flex-end;
+figure:nth-child(odd) figcaption{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    text-transform: uppercase;
+
+}
+figure:nth-child(even) figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    padding: 10px;
+    text-transform: uppercase;
+}
+img{
+    display: block;
+    max-width: 100%;
 }
 .contact{
     color: white;
     text-align: center;
-    width: 350px;
+    width: 450px;
     margin: auto;
 }
 #form{
-    margin: auto;
+    margin: 30px;
+    padding: 15px;
     width: 350px;
+    text-transform: uppercase;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
-label{
-    display: block;
-    margin-bottom: 5px;
+div{
+    width: 100%;
 }
-input[type="text"], input[type="email"]{
+input[type="text"], input[type="email"], textarea{
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #007d7b;
     color: #007d7b;
-    
+    text-transform: uppercase;
+    font-weight: bold;
 }
 #submit{
     color:white;
     background-color: #007d7b;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border: none;
     border-radius: 5px;
     cursor: pointer; 
-    align-items: center;   
+    align-self: center;  
+    font-weight: bold; 
+    margin: 5px;
 }
+footer{
+    text-align: center;
+    padding: 30px;
+    margin: auto;
+    color: white;
+}
+}
+@media screen and (max-width: 800px) {
+    body{
+        margin: auto;
+        padding: 10px;
+        background-color: black;
+    }
+    header{
+        background-color: black;
+    }
+    h1{
+        color: #007d7b;
+        background-color: white;
+        font-size: 3em;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    nav ul {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    nav a{
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        margin: 0 10px;
+        font-size: 1.5em;
+    }
+    [href="#top"] {
+        position:fixed;
+        bottom:0px;
+        right:0px;
+        border-radius:10px 0 0px 0px;
+      }
+    
+    main{
+        background-color: white;
+        padding: 10px;
+        margin: 0 100px;
+        max-width: 500px;
+    }
+    h2{
+        text-align:center;
+        padding: 10px;
+        font-size: 2em;
+    }
+    p{
+        padding: 5px;
+        font-size: 1.25em;
+    }
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 10px;
+    }
+    figcaption, label, input, small{
+        font-size: 1em;
+    }
+    .gallery figure{
+        position: relative;
+    }
+    .gallery figcaption{
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+    figure:nth-child(odd) figcaption{
+        position: absolute;
+        top: 5px;
+        left: 0;
+        transform: none;
+        padding: 10px;
+        text-transform: uppercase;
+        color: black;
+    }
+    figure:nth-child(even) figcaption{
+        bottom: 40px;
+        left: 0;
+        transform: none;
+        color: white;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+    .gallery img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .contact{
+        color: white;
+        text-align: center;
+        width: 450px;
+        margin: auto;
+    }
+    #form{
+        margin: 50px;
+        padding: 40px;
+        width: 600px;
+        text-transform: uppercase;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    div{
+        width: 100%;
+    }
+    input[type="text"], input[type="email"], textarea{
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #007d7b;
+        color: #007d7b;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    #submit{
+        color:white;
+        background-color: #007d7b;
+        padding: 15px 100px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; 
+        align-self: center;  
+        font-weight: bold; 
+        margin: 5px;
+    }
+    footer{
+        text-align: center;
+        padding: 30px;
+        margin: auto;
+        color: white;
+    }
+
+
 }
